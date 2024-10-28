@@ -1,28 +1,40 @@
-"use strict";
-const arr = [1, 2, 3];
-const obj = {
-        1: 1,
-        b:2,
-      };
+/* Задание на урок:
 
-obj.c = 4;
-console.log(obj);
-console.log(arr);
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
 
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
 
-const obj2 = {
-        Alice: 1,
-        Anna: 2,
-      };
-console.log(obj2.Alice);
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
 
+Проверить, чтобы все работало без ошибок в консоли */
 
-let inc = 10,
-      dec = 10;
-    
-inc++;
-dec--;
+'use strict';
 
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-console.log(inc++);
-console.log(dec--);
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors:{},
+    genres: [],
+    privat: false,
+};
+
+const film = prompt('Один из последних просмотренных фильмов?', '');
+const rating = +prompt('На сколько оцените его?', '');
+
+personalMovieDB.movies[film] = rating;
+console.log(personalMovieDB);
